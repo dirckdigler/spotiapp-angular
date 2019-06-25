@@ -1,0 +1,35 @@
+<div class="section-album row">
+  <div class="col-4 desc-album">
+    <img src="{{ album.images | noimage }}" class="img-album"
+      alt="...">
+    <div class="album-description text-center">
+      <h2>{{ album.name }}</h2>
+      <a class="name-band " *ngFor="let itemBand of album.artists"
+        [routerLink]="['/artist', itemBand.id]">
+        {{ itemBand.name }}
+      </a>
+      <span class="date">{{ album.release_date | date: 'y' }}</span>
+      <span class="total-tracks">- {{ album.total_tracks }} CANCIONES</span>
+    </div>
+  </div>
+
+  <div class="col-8">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let track of album.tracks.items">
+          <td>
+            {{ track.name }}
+            <span *ngIf="track.explicit">
+              EXPLICIT
+            </span>
+          </td>
+          <td>
+            <iframe [src]="track.uri | domseguro " width="300" height="80"
+              frameborder="0" allowtransparency="true" allow="encrypted-media">
+            </iframe>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

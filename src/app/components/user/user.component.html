@@ -1,0 +1,11 @@
+
+<div class="profile-wraper m-5 animated fadeIn">
+  <h1 class="col-12 text-center">Bienvenio {{ name }}</h1>
+  <div class="profile text-center">
+    <a [routerLink]="['account']" class="user-link" data-toggle="dropdown">
+      <img src="{{ image }}" class="img-circle navbar-user-img" alt="...">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+    <span>Tú spotify Web: <a href="{{ web }}">{{ web }}</a></span>
+  </div>
+</div>

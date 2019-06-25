@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    background-color: black;
+    color: white !important;
+}
+
+hr {
+    border-color: white;
+}
+
+.puntero {
+    cursor: pointer;
+}
+
+.img-circle {
+    border-radius: 100%;
+    width: 150px;
+}
+
+.card-title,
+.card-text {
+    color: black;
+}
+
+.badge {
+    margin-left: 5px;
+}
+
+.btn-outline-success {
+    margin-left: 5px;
+}
+
+.img-thumb {
+    width: 50px;
+    height: 50px;
+}
+.img-related {
+  width: 200px;
+  height: 200px;
+}
+.img-album {
+  width: 300px;
+  height: auto;
+}
+
+/* Animaciones */
+
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.fast {
+    -webkit-animation-duration: 0.4s;
+    animation-duration: 0.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+}
+
+.navbar-nav {
+    position: relative;
+    width: 100%;
+}
+
+/* -------------- menu ------------- */
+#navbarSupportedContent .profile-wraper {
+    margin: 0 !important;
+    position: absolute;
+    right: 0;
+}
+#navbarSupportedContent .fa-chevron-down {
+    display: inline-block;
+}
+#navbarSupportedContent .profile-wraper span,
+#navbarSupportedContent .profile-wraper h1 {
+    display: none;
+}
+
+#navbarSupportedContent .profile img {
+    width: 40px;
+}
+
+#login-to-continue {
+    font-size: 22px;
+    margin: .5em 0;
+    color: #1DB954;
+    font-weight: 400;
+}
+
+#login a {
+    width: 50%;
+    border-radius: 30px;
+    line-height: 30px;
+    background-color: #3b5998;
+    border-color: #3b5998;
+    display: block;
+    margin-right: auto !important;
+    margin-left: auto !important;
+}
+.fa-chevron-down {
+    display: none;
+}
+.profile span {
+    margin-left: 20px;
+}
+
+/* -------------- artist ------------- */
+.table td {
+  border-top: none;
+  vertical-align: inherit;
+}
+.table .song-name {
+  color: #fff;
+ }
+.table .img-thumb {
+  margin-top: 15px;
+}
+.section-discrohraphy .container {
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.section-discrohraphy figure {
+  width: 200px;
+  margin-bottom: 30px;
+}
+.section-discrohraphy figcaption {
+  color: #fff;
+  margin-top: 5px;
+}
+.section-discrohraphy .name-band {
+  color: #848181
+}
+
+
+/* ------------ album --------------------*/
+.section-album .album-description {
+  width: 300px;
+}
+.section-album h2 {
+  margin-top: 10px;
+}
+.section-album .name-band {
+  display: inherit;
+  margin-bottom: 16px;
+}
+.section-album .date {
+  margin-top: 10px;
+}
+.section-album td {
+  color: #fff;
+}
+.section-album .name-band {
+  color: #848181;
+}
+.total-tracks,
+.date {
+  color: #848181;
+  font-size: 12px;
+}
