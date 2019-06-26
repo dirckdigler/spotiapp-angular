@@ -17,7 +17,7 @@ export class UserComponent {
   constructor( private http: HttpClient ) {
     // this.spotify.getUser();
     const headers = new HttpHeaders({
-      'Authorization': `Bearer BQBQQmBrZxssngzcQROZLCx3i-hommkXFjCGjadw78BCy-X2VqDwO1fx9dXUPqMEvsTR7nLDLHEKKYfvfVOiNVOgpPM5PN-6_p_0v3x9xAcFn1k8DT6JZHy1sOPzzCDLPOG4PdE_1R2GHPA`,
+      'Authorization': `Bearer BQDZMoLoeymVoMCtLh5-vs-NUHutG3jD9OwDEfPWoR6VD8zQgVyNSNfEQv6sPFDIIpl2DEWmmb3RqNKbvjMZh3CsmQRtL6MaiTrtEIh9IBp5NSOTQ22BKZVFYYGJeKBldL3XEEe5VqGCyPH8MqnXtmWzs9KC`,
     });
 
     this.http.get('https://api.spotify.com/v1/me', { headers })

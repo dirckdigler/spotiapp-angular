@@ -22,6 +22,7 @@ import { ROUTES } from  './app.routes';
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
 import { DiscographyComponent } from './components/discography/discography.component';
+import { LibraryComponent } from './components/library/library.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { DiscographyComponent } from './components/discography/discography.compo
     LoginComponent,
     AlbumComponent,
     DiscographyComponent,
+    LibraryComponent,
   ],
   imports: [
     BrowserModule,

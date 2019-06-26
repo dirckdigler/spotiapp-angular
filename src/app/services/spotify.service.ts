@@ -8,6 +8,8 @@ import { map } from 'rxjs/operators';
 export class SpotifyService {
 
   tokenSerive: any[] = [];
+  myAlbum: any = {};
+  token: any = 'BQC6mLvJnPiwykHCyI8JGwgHg21k2QKpHZBjnvM0YlzG0mkZo_ahFmgDe_YiVoR0B0VPgVvqXFLtQOstwvpORjN7FyLfdLY-JYT2Gfj-0uy7daiQn_IjIcebn4H7mJoFipufah80syRoerQT17XS44ppvzqH';
 
   constructor( private http: HttpClient ) {
     const endpoint = 'https://spotify-get-token.herokuapp.com/spotify/a489ec36708347ce8ba25672404d8be7/cb6e844df09a4cc0a75ef18198b4c2a0';
@@ -16,6 +18,8 @@ export class SpotifyService {
       this.tokenSerive = token.access_token;
       localStorage.setItem('token', JSON.stringify(this.tokenSerive));
     });
+    this.putQuery();
+
   }
 
   getQuery( query: string ) {
@@ -24,10 +28,24 @@ export class SpotifyService {
     console.log(token);
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${ token }`,
-      // 'Authorization': `Bearer BQBVoPzfU84iQkYt_y8Nx8eIUBBhQlZZfSsATAbk1-VLNnK5meEoVtS7B1U90oDqlYKYs5Gd0ePKS7oX638`,
     });
 
     return this.http.get(url, { headers });
+  }
+
+  putQuery( ) {
+    const url = `https://api.spotify.com/v1/me/albums?ids=0el3EEf66jesDme98lUMCA`;
+
+    const headers = new HttpHeaders({
+      'Authorization': `Bearer ${this.token}`,
+      'Content-Type': 'application/json',
+    });
+
+    this.http.put(url, '', { headers })
+      .subscribe((data: any) => {
+        console.log(data);
+      });
+
   }
 
   getNewRelease() {
@@ -61,5 +79,9 @@ export class SpotifyService {
     return this.getQuery(`artists/${idArtist}/albums`)
       .pipe( map( data => data['items'] ));
   }
+
+  // myAlbums( idAlbum: string ) {
+  //   return this.putQuery(`me/albums?ids=${idAlbum}`);
+  // }
 }
 
