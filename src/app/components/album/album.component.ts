@@ -23,7 +23,11 @@ export class AlbumComponent {
     this.spotify.getAlbum(id)
       .subscribe(album => {
         this.album = album;
-        console.log(album);
       });
   }
+
+  myAlbums(id: any) {
+    this.spotify.myAlbums(id).subscribe(album => {});
+  }
+
 }

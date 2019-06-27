@@ -10,6 +10,9 @@
       </a>
       <span class="date">{{ album.release_date | date: 'y' }}</span>
       <span class="total-tracks">- {{ album.total_tracks }} CANCIONES</span>
+      <span class="favorites">
+        <i (click)="myAlbums( album.id )" class="fas fa-heart puntero active"></i>
+      </span>
     </div>
   </div>
 

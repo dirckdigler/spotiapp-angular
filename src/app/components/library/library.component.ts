@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { SpotifyService } from '../../services/spotify.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-library',
@@ -8,13 +10,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class LibraryComponent {
 
-  image: any[] = [];
-  name: any[] = [];
-  web: any[] = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private spotify: SpotifyService,
+    private router: ActivatedRoute) {
 
   }
-
 
 }

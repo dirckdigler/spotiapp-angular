@@ -19,7 +19,6 @@ export class HomeComponent {
       .subscribe( ( data: any ) => {
         this.newSongs = data;
         this.loading = false;
-        console.log(data);
       });
   }
 
