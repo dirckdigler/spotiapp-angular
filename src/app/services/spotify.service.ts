@@ -8,8 +8,7 @@ import { map } from 'rxjs/operators';
 export class SpotifyService {
 
   tokenSerive: any[] = [];
-  myAlbum: any = {};
-  token: any = 'BQDhuBFDbArnO8IRzQSBG5VZltpUCWz2NvuQXM1EydZCcZrceyysnAO7Wj9P9gcnCYzBeH3xDTopWPbQ6AjcSsnnIG83CPgAkTSmyaQbYGNxs0O6BqGLc4R7uaBgfb7_XUNHtE95sxksuuuRnAHqbMC0IiagNO0IAvO9';
+  token: any = 'BQDsZoUZS-QA8QJzK2_L66690hdCd4TSUOzyT2I1tuRO0UMOjc5SFitVwb_Egj-He3VZE4_dPvnGHaFl7IvtZHbTZDOxVEd_tA91xegd8oODiwIAohZejU4P3sItRwxAlEHSE-6xlT08m9yjmDNoaZ9ehdyF7HH-zGUp';
   url: any = 'https://api.spotify.com/v1/';
 
   constructor( private http: HttpClient ) {

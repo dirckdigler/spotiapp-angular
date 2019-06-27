@@ -149,7 +149,6 @@ hr {
   color: #848181
 }
 
-
 /* ------------ album --------------------*/
 .section-album .album-description {
   width: 300px;
@@ -174,4 +173,8 @@ hr {
 .date {
   color: #848181;
   font-size: 12px;
+}
+.section-album .fa-heart {
+  display: block;
+  padding: 15px;
 }

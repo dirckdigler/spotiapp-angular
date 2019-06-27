@@ -52,15 +52,17 @@
     <h2>ÁLBUMES</h2>
     <div class="container text-center">
       <div class="album" *ngFor="let album of discrography">
-        <figure *ngFor="let itemBand of album.artists">
-          <a [routerLink]="['/album', album.id]">
-            <img [src]="album.images | noimage" class="img-related">
-            <figcaption>{{album.name}}</figcaption>
-          </a>
-          <a class="name-band" [routerLink]="['/artist', itemBand.id]">
-            {{ itemBand.name }}
-          </a>
-        </figure>
+        <div *ngIf="album.album_group === 'album'">
+          <figure *ngFor="let itemBand of album.artists">
+            <a [routerLink]="['/album', album.id]">
+              <img [src]="album.images | noimage" class="img-related">
+              <figcaption>{{album.name}}</figcaption>
+            </a>
+            <a class="name-band" [routerLink]="['/artist', itemBand.id]">
+              {{ itemBand.name }}
+            </a>
+          </figure>
+        </div>
       </div>
     </div>
   </div>
