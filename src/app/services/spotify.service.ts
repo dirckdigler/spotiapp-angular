@@ -9,7 +9,8 @@ export class SpotifyService {
 
   tokenSerive: any[] = [];
   myAlbum: any = {};
-  token: any = 'BQByqrsAWs5ejWtMBft3RNcRKD9yJQ-ueiYTybjfP5QSqiQAQ1N0qi98NZFQkCcAWA_5HCuI1Yny9X62wJM2v0SOo-a1zJlFbDQ-W8Ta_qi43kjmGCSkAXbDN76ktUxiCHDFltEmKStJw6LalidHEqZxhc4L';
+  token: any = 'BQDhuBFDbArnO8IRzQSBG5VZltpUCWz2NvuQXM1EydZCcZrceyysnAO7Wj9P9gcnCYzBeH3xDTopWPbQ6AjcSsnnIG83CPgAkTSmyaQbYGNxs0O6BqGLc4R7uaBgfb7_XUNHtE95sxksuuuRnAHqbMC0IiagNO0IAvO9';
+  url: any = 'https://api.spotify.com/v1/';
 
   constructor( private http: HttpClient ) {
     const endpoint = 'https://spotify-get-token.herokuapp.com/spotify/a489ec36708347ce8ba25672404d8be7/cb6e844df09a4cc0a75ef18198b4c2a0';
@@ -18,12 +19,12 @@ export class SpotifyService {
       this.tokenSerive = token.access_token;
       localStorage.setItem('token', JSON.stringify(this.tokenSerive));
     });
+
   }
 
   getQuery( query: string ) {
-    const url = `https://api.spotify.com/v1/${ query }`;
+    const url = `${ this.url }${ query }`;
     let token = JSON.parse( localStorage.getItem( 'token' ) );
-    console.log(token);
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${ token }`,
     });
@@ -32,15 +33,13 @@ export class SpotifyService {
   }
 
   putQuery( query: string ) {
-    const url = `https://api.spotify.com/v1/${ query }`;
-
+    const url = `${ this.url }${ query }`;
     const headers = new HttpHeaders({
-      'Authorization': `Bearer ${this.token}`,
+      'Authorization': `Bearer ${ this.token }`,
       'Content-Type': 'application/json',
     });
 
     return this.http.put(url, '', { headers });
-
   }
 
   getNewRelease() {

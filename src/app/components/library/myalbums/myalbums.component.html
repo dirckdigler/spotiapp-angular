@@ -1,3 +1,17 @@
-<p>
-  library works!
-</p>
+<div class="section-discrohraphy row m-5">
+  <div class="col">
+    <div class="container text-center">
+      <div class="album" *ngFor="let item of library">
+        <figure>
+          <a [routerLink]="['/album', item.album.id]">
+            <img src="{{ item.album.images[0].url }}" class="img-related">
+            <figcaption>{{ item.album.name }}</figcaption>
+          </a>
+          <a class="name-band" [routerLink]="['/artist', item.album.artists[0].id]">
+            {{ item.album.artists[0].name }}
+          </a>
+        </figure>
+      </div>
+    </div>
+  </div>
+</div>

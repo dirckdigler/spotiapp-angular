@@ -14,6 +14,8 @@ import { LoadingComponent } from './components/shared/loading/loading.component'
 import { UserComponent } from './components/user/user.component';
 import { LoginComponent } from './components/login/login.component';
 import { AlbumComponent } from './components/album/album.component';
+import { DiscographyComponent } from './components/discography/discography.component';
+import { LibraryComponent } from './components/library/myalbums/myalbums.component';
 
 // routes
 import { ROUTES } from  './app.routes';
@@ -21,8 +23,6 @@ import { ROUTES } from  './app.routes';
 // pipes
 import { NoimagePipe } from './pipes/noimage.pipe';
 import { DomseguroPipe } from './pipes/domseguro.pipe';
-import { DiscographyComponent } from './components/discography/discography.component';
-import { LibraryComponent } from './components/library/library.component';
 
 @NgModule({
   declarations: [

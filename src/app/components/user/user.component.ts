@@ -14,10 +14,11 @@ export class UserComponent {
   name:  any[] = [];
   web:   any[] = [];
 
-  constructor( private http: HttpClient ) {
-    // this.spotify.getUser();
+  constructor( private http: HttpClient,
+               private spotify: SpotifyService ) {
+
     const headers = new HttpHeaders({
-      'Authorization': `Bearer BQByqrsAWs5ejWtMBft3RNcRKD9yJQ-ueiYTybjfP5QSqiQAQ1N0qi98NZFQkCcAWA_5HCuI1Yny9X62wJM2v0SOo-a1zJlFbDQ-W8Ta_qi43kjmGCSkAXbDN76ktUxiCHDFltEmKStJw6LalidHEqZxhc4L`,
+      'Authorization': `Bearer ${ this.spotify.token }`,
     });
 
     this.http.get('https://api.spotify.com/v1/me', { headers })
